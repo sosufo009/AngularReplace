@@ -1,0 +1,15 @@
+.resultTextbox
+{
+  width:450px;
+  height: 300px;
+}
+
+.container
+{
+  margin-top: 20px;
+}
+
+input
+{
+  width: 200px;
+}

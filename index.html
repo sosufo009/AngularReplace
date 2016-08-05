@@ -1,0 +1,78 @@
+<!document>
+<html>
+    <head>
+        <title>Gameforge Test</title>
+        <script src="angular.min.js"></script>
+        <script src="app.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </head>
+    <body class="container" ng-app="app" ng-controller="test1 as ctl">
+        <div class="jumbotron">
+            <div class="row" id="label">
+                <div class="col-md-4 col-md-offset-2">
+                    <p>
+                        Token
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <p>
+                        Replacement
+                    </p>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <br/>
+            <div class="row" ng-repeat="list in ctl.list">
+                <div class="col-md-4 col-md-offset-2">
+                    <input type="text" placeholder="Origin text" ng-model="list.ort"/>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" placeholder="Change text" ng-model="list.cnt"/>
+                </div>
+                <div class="col-md-2">
+                    <button ng-click="ctl.removeButton(list.id)" class="btn btn-danger">(-) Delete</button>
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-md-2 col-md-offset-10">
+                    <button ng-click="ctl.addButton()" class="btn btn-primary">(+) Add new Token</button>
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>
+                        Input
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        Output
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <textarea class="resultTextbox" ng-model="ctl.inputbox"></textarea>
+                </div>
+                <div class="col-md-6">
+                    <textarea class="resultTextbox" ng-model="ctl.outputbox"></textarea>
+                </div>
+
+            </div>
+            <br/>
+
+
+            <div class="row">
+              <div class="col-md-4 col-md-offset-5">
+                <button ng-click="ctl.replaceAction()" class="btn btn-success">Replace GO!</button>
+              </div>
+            </div>
+
+        </div>
+    </body>
+
+</html>
